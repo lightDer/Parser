@@ -24,7 +24,7 @@ void Parser::cellphone(const QString s)
 
 void Parser::landlinePhone(const QString s)
 {
-    QRegExp rx("\\d{3}-\\d{8}");
+    QRegExp rx("\\d{3}-\\d{7,}");
     int pos = 0;
     while ((pos = rx.indexIn(s, pos)) != -1)
     {
