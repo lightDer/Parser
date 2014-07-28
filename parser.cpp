@@ -17,7 +17,7 @@ void Parser::cellphone(const QString s)
     int pos = 0;
     while ((pos = rx.indexIn(s, pos)) != -1)
     {
-        matchPattern << rx.cap();
+        matchPattern << rx.cap().insert(0, "0086");
         pos += rx.matchedLength();
     }
 }
@@ -28,7 +28,7 @@ void Parser::landlinePhone(const QString s)
     int pos = 0;
     while ((pos = rx.indexIn(s, pos)) != -1)
     {
-        matchPattern << rx.cap().remove(QChar('-')).insert(0, "+86");
+        matchPattern << rx.cap().remove(QChar('-')).insert(0, "0086");
         pos += rx.matchedLength();
     }
 }
