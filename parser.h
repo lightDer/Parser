@@ -8,13 +8,14 @@
 class Parser
 {
 public:
+    Parser() { setPattern("(1\\d{10}|\\d{1,3}-\\d{6,})"); }
+    Parser(const QString s) { setPattern(s); }
+
     QStringList parse(const QString source);
+    void setPattern(const QString s) { pattern = s; }
 
 private:
-    QStringList matchPattern;
-
-    void cellphone(const QString s);
-    void landlinePhone(const QString s);
+    QString pattern;
 };
 
 #endif // PARSER_H

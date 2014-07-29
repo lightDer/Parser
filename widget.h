@@ -5,7 +5,6 @@
 #include <QTextEdit>
 #include <QLayout>
 #include <QPushButton>
-#include <QDebug>
 
 class Widget : public QWidget
 {

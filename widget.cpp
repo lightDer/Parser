@@ -10,7 +10,7 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
-    setWindowTitle("PARSER beta");
+    setWindowTitle("PARSER beta v 0.0.1");
 
     const int minEditWidth = 600;
     const int minEditHeight = minEditWidth*9 / 16;
@@ -126,6 +126,12 @@ void Widget::parseClicked()
 
         for (int j = 0; j < match.size(); ++j)
             destinationEdit->append(match.at(j));
+    }
+
+    if (destinationEdit->toPlainText().isEmpty())
+    {
+        QMessageBox::information(this, tr("Oops"), tr("There are no match patterns."),
+                             QMessageBox::Ok);
     }
 }
 
